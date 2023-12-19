@@ -1,4 +1,5 @@
 import got from 'got'
+import tar from 'tar'
 
 const lookupLatestRelease = async (owner, repo) => {
   try {
@@ -19,5 +20,11 @@ const lookupLatestRelease = async (owner, repo) => {
 
 const owner = 'OP-TED'
 const repo = 'ePO'
-const release = await lookupLatestRelease(owner, repo)
-console.log('Latest release:', release)
+const targetDir = 'latest'
+const { tag, tarball_url } = await lookupLatestRelease(owner, repo)
+console.log('Updating latest release:', tag, 'into', targetDir)
+const response = await got.stream(tarball_url)
+response.pipe(tar.x({
+  strip: 1, C: targetDir, // alias for cwd:'some-dir', also ok
+}))
+

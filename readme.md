@@ -1,11 +1,11 @@
 # Checks
 
-Some checkings
+do some checkings
 
 ## Usage
 
 ```sh
 npm install
-sh ./download.sh
+node ./getLatest.js
 node ./doChecks.js
 ```

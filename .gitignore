@@ -2,7 +2,5 @@
 build
 **/UML_EA.DTD
 **/*.ldb
-implementation
-glossary
-analysis_and_design
+latest
 node_modules
