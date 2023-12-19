@@ -1,0 +1,28 @@
+{
+  "name": "op-ontology-checks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cristianvasquez/op-ontology-checks.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cristianvasquez/op-ontology-checks/issues"
+  },
+  "homepage": "https://github.com/cristianvasquez/op-ontology-checks#readme",
+  "dependencies": {
+    "@rdfjs-elements/formats-pretty": "^0.6.4",
+    "@rdfjs/formats": "^4.0.0",
+    "get-stream": "^8.0.1",
+    "gh-got": "^10.0.0",
+    "glob": "^10.3.10",
+    "rdf-ext": "^2.5.1"
+  }
+}
