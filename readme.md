@@ -6,6 +6,6 @@ do some checkings
 
 ```sh
 npm install
-node ./getLatest.js
-node ./doChecks.js
+npm run update-ontology
+mpm run do-checks
 ```
