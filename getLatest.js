@@ -18,7 +18,7 @@ const lookupLatestRelease = async (owner, repo) => {
       tarball_url: response.body.tarball_url,
     };
   } catch (error) {
-    console.error("Error getting latest release asset URL:", error.message);
+    console.error("Error getting the latest release asset URL:", error.message);
     throw error;
   }
 };
@@ -26,13 +26,13 @@ const lookupLatestRelease = async (owner, repo) => {
 const owner = "OP-TED";
 const repo = "ePO";
 const targetDir = "latest";
+
 try {
+  await fs.rm(targetDir, { recursive: true, force: true });
   await fs.mkdir(targetDir);
 } catch (error) {
-  if (error.code !== "EEXIST") {
-    console.error("Error creating directory:", error.message);
-    process.exit(1);
-  }
+  console.error("Error updating directory:", error.message);
+  process.exit(1);
 }
 
 const { tag, tarball_url } = await lookupLatestRelease(owner, repo);

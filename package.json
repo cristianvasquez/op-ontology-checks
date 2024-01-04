@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "update-ontology": "node getLatest.js",
-    "do-checks": "node doChecks.js"
+    "do-checks": "node doChecks.js",
+    "start": "npm run update-ontology && npm run do-checks"
   },
   "repository": {
     "type": "git",
